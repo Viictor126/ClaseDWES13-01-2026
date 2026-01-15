@@ -5,4 +5,22 @@ app.get("/saludo",(req,res) =>{
   res.status(200).send("Hola me llamo saba y quiero ser programador")
 })
 
+app.get("/saludo/:nombre/:edad",(req,res) =>{
+
+  let nombre = req.params.nombre
+  let edad = req.params.edad
+
+  res.status(200).send(`Hola me llamo ${nombre} y tengo ${edad} años`)
+})
+
+app.get("/saludo/con-parametros",(req,res) =>{
+
+  let nombre = req.query.nombre
+  let edad = req.query.edad
+
+  res.status(200).send(`Hola me llamo ${nombre} y tengo ${edad} años`)
+})
+
+
+
 app.listen(3000, () => console.log("proyecto arrancado por el puert 3000"))
