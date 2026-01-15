@@ -1,6 +1,15 @@
 const express = require("express")
 const app = express()
 
+const rutaCoches = require("./routes/coche.routes")
+
+// Middleware
+app.use(express.json())
+app.use("/api/coches", rutaCoches)
+
+
+// rutas de saludo
+/**
 app.get("/saludo",(req,res) =>{
   res.status(200).send("Hola me llamo saba y quiero ser programador")
 })
@@ -19,8 +28,8 @@ app.get("/saludo/con-parametros",(req,res) =>{
   let edad = req.query.edad
 
   res.status(200).send(`Hola me llamo ${nombre} y tengo ${edad} años`)
-})
+}) */
 
-
+// levantar el servicio
 
 app.listen(3000, () => console.log("proyecto arrancado por el puert 3000"))
